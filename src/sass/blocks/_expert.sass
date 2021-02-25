@@ -1,0 +1,58 @@
+.expert
+    padding-top: 81px
+    background-image: url(../img/bg/expert_bg.jpg)
+.carousel
+    position: relative
+    overflow-x: hidden
+    &__list
+        margin: 24px auto 36px auto
+        border: 1px solid #d1d1d1
+        border-radius: 5px
+        height: 65px
+        width: 844px
+    &__wrapper     
+        display: flex
+        justify-content: stretch
+        padding: 14px 33px
+    &__item
+        border-right: 1px solid #ffffff
+        text-align: center
+        padding: 12px 7px
+        &:first-child
+            padding-left: 0
+        &:last-child
+            padding-right: 0
+            border-right: 0
+    &__link
+        color: #FFFFFF
+        font-size: 14px
+        text-decoration: none
+        &:hover
+            color: $main-color
+    &__inner
+        display: flex
+        width: 600%
+        transition: 1.2s all
+        padding-bottom: 53px
+    &__slide
+        display: flex
+        justify-content: center
+        width: 1140px
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+    .next
+        position: absolute
+        top: 350px
+        right: 47px
+        background-color: #FFFFFF
+        border: none
+        cursor: pointer
+    .prev
+        position: absolute
+        top: 350px
+        left: 47px
+        background-color: #FFFFFF
+        border: none
+        cursor: pointer
