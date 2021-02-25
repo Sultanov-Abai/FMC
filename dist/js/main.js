@@ -1758,12 +1758,60 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+
 
 window.addEventListener('DOMContentLoaded', function () {
   "use strict";
 
-  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])('.carousel', '.carousel__inner', '.carousel__item', '.prev', '.next');
+  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])('.carousel', '.carousel__inner', '.carousel__slide', '.carousel__link', '.prev', '.next');
+  Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('.overlay', '#modal', '.btn-order', '.modal', '.form__sum-num', '.basket__sum-num', '.modal__descr');
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var modals = function modals() {
+  var overlay = document.querySelector('.overlay'),
+      modal = document.querySelector('#modal'),
+      thanks = document.querySelector('#thanks'),
+      btn = document.querySelector('.call_btn'),
+      close = document.querySelector('.modal__close');
+  btn.addEventListener('click', function () {
+    overlay.classList.add('overlay_active');
+    modal.classList.add('modal_active');
+    document.body.style.overflow = 'hidden';
+  }); // overlay.addEventListener('click', e => {
+  //     if (e.target == close || overlay) {
+  //         overlay.style.display = 'none';
+  //         modal.style.display = 'none';
+  //         document.body.style.overflow = '';
+  //     }
+  // });
+
+  close.addEventListener('click', function () {
+    modal.classList.remove('modal_active');
+    overlay.classList.remove('overlay_active');
+    document.body.style.overflow = '';
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target == overlay) {
+      modal.classList.remove('modal_active');
+      overlay.classList.remove('overlay_active');
+      document.body.style.overflow = '';
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (modals);
 
 /***/ }),
 
@@ -1786,16 +1834,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var slider = function slider(wrapperSelector, innerSelector, slidesSelector, prevSelector, nextSelector) {
+var slider = function slider(wrapperSelector, innerSelector, slidesSelector, btnsSelector, prevSelector, nextSelector) {
   var wrapper = document.querySelector(wrapperSelector),
       inner = document.querySelector(innerSelector),
       slides = document.querySelectorAll(slidesSelector),
+      btns = document.querySelectorAll(btnsSelector),
       prev = document.querySelector(prevSelector),
       next = document.querySelector(nextSelector),
       width = window.getComputedStyle(wrapper).width;
   var offset = 0;
   slides.forEach(function (slide) {
     slide.style.width = width;
+  });
+  btns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () {
+      inner.style.transform = "translateX(-".concat(i * 1123, "px)");
+    });
   });
   next.addEventListener('click', function () {
     if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {

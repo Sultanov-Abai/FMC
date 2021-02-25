@@ -6,7 +6,7 @@
     <title>FMC</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
+<body id="main">
     <div class="country">
         <div class="container">
             <div class="country__list">
@@ -72,19 +72,19 @@
                 </div>
                 <div class="promo__list">
                     <div class="promo__item">
-                        <a href="#" class="promo__link">главная</a>
+                        <a href="#main" class="promo__link">главная</a>
                     </div>
                     <div class="promo__item">
-                        <a href="#" class="promo__link">Модули</a>
+                        <a href="#modules" class="promo__link">Модули</a>
                     </div>
                     <div class="promo__item">
-                        <a href="#" class="promo__link">Отрасли</a>
+                        <a href="#industry" class="promo__link">Отрасли</a>
                     </div>
                     <div class="promo__item">
-                        <a href="#" class="promo__link">О нас</a>
+                        <a href="#about" class="promo__link">О нас</a>
                     </div>
                     <div class="promo__item">
-                        <a href="#" class="promo__link">Наши обязательства</a>
+                        <a href="#duty" class="promo__link">Наши обязательства</a>
                     </div>
                 </div>
             </nav>
@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    <div class="with">
+    <div class="with" id="modules">
         <div class="container">
             <div class="with__questions">
                 <div class="with__questions-item">
@@ -149,7 +149,7 @@
         </div>
     </div>
 
-    <div class="expert">
+    <div class="expert" id="industry">
         <div class="container">
             <div class="title title-white">
                 Prengi предоставляет экспертные решения <br> для Вашей отрасли
@@ -158,22 +158,22 @@
                 <div class="carousel__list">
                     <div class="carousel__wrapper">
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi Production</a>
+                            <div href="#" class="carousel__link">Prengi Production</div>
                         </div>
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi FMC</a>
+                            <div href="#" class="carousel__link">Prengi FMC</div>
                         </div>
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi Mallz Retail</a>
+                            <div href="#" class="carousel__link">Prengi Mallz Retail</div>
                         </div>
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi Logistic</a>
+                            <div href="#" class="carousel__link">Prengi Logistic</div>
                         </div>
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi IT</a>
+                            <div href="#" class="carousel__link">Prengi IT</div>
                         </div>
                         <div class="carousel__item">
-                            <a href="" class="carousel__link">Prengi HR</a>
+                            <div href="#" class="carousel__link">Prengi HR</div>
                         </div>
                     </div>
                 </div>
@@ -197,13 +197,13 @@
                         <img src="img/laptop.png" alt="laptop" class="carousel__img">
                     </div>
                 </div>
-                <button class="prev"><img src="icons/arrows/prev.png" alt="prev" class=""></button>
-                <button class="next"><img src="icons/arrows/next.png" alt="next" class=""></button>
+                <button type="button" class="prev"><img src="icons/arrows/prev.png" alt="prev"></button>
+                <button type="button" class="next"><img src="icons/arrows/next.png" alt="next"></button>
             </section>
         </div>
     </div>
 
-    <div class="advantage">
+    <div class="advantage" id="about">
         <div class="container">
             <div class="title">
                 Преимущества Prengi для <br> Вашей отрасли
@@ -277,13 +277,13 @@
         </div>
     </div>
 
-    <div class="easy">
+    <div class="easy" id="duty">
         <div class="container">
             <div class="easy__img"><img src="img/easy.png" alt="image"></div>
             <div class="title">Приступить очень просто! <br>
                 Нужно получить доступ и начать работу!
             </div>
-            <button class="btn">связаться с нами</button>
+            <button class="btn call_btn">связаться с нами</button>
         </div>
     </div>
 
@@ -345,6 +345,26 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay">
+        <div class="modal" id="modal">
+            <div class="modal__close">&times;</div>
+            <div class="modal__title">Закажите звонок</div>
+            <div class="modal__subtitle">Нужно лишь заполнить форму</div>
+            <form class="form">
+                <div class="form__inputs">
+                    <input type="text" required class="form__input" placeholder="Ваше имя">
+                    <input type="number" required class="form__input" placeholder="Ваш номер телефона">
+                    <input type="email" required class="form__input" placeholder="Ваш e-mail">
+                </div>
+                <button class="btn btn-form">Отправить</button>
+            </form>
+        </div>
+        <div class="modal" id="thanks">
+            <div class="modal__title">Спасибо за вашу заявку</div>
+            <div class="modal__subtitle">В скором времени с вами свяжется менеджер</div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
