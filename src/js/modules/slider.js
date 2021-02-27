@@ -2,6 +2,7 @@ const slider = (wrapperSelector, innerSelector, slidesSelector, btnsSelector, pr
     const wrapper = document.querySelector(wrapperSelector),
           inner = document.querySelector(innerSelector),
           slides = document.querySelectorAll(slidesSelector),
+          slide = document.querySelector(slidesSelector),
           btns = document.querySelectorAll(btnsSelector),
           prev = document.querySelector(prevSelector),
           next = document.querySelector(nextSelector),
@@ -15,7 +16,9 @@ const slider = (wrapperSelector, innerSelector, slidesSelector, btnsSelector, pr
 
     btns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
-            inner.style.transform = `translateX(-${i * 1123}px)`;
+            const slideWidth = window.getComputedStyle(slide).width;
+            let math = i * +width.slice(0, width.length - 2);
+            inner.style.transform = `translateX(-${math}px)`;
         });
     });
 

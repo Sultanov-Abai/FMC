@@ -1838,6 +1838,7 @@ var slider = function slider(wrapperSelector, innerSelector, slidesSelector, btn
   var wrapper = document.querySelector(wrapperSelector),
       inner = document.querySelector(innerSelector),
       slides = document.querySelectorAll(slidesSelector),
+      slide = document.querySelector(slidesSelector),
       btns = document.querySelectorAll(btnsSelector),
       prev = document.querySelector(prevSelector),
       next = document.querySelector(nextSelector),
@@ -1848,7 +1849,9 @@ var slider = function slider(wrapperSelector, innerSelector, slidesSelector, btn
   });
   btns.forEach(function (btn, i) {
     btn.addEventListener('click', function () {
-      inner.style.transform = "translateX(-".concat(i * 1123, "px)");
+      var slideWidth = window.getComputedStyle(slide).width;
+      var math = i * +width.slice(0, width.length - 2);
+      inner.style.transform = "translateX(-".concat(math, "px)");
     });
   });
   next.addEventListener('click', function () {
